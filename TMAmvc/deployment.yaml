@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: TMAmvc
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: TMAmvc
+  template:
+    metadata:
+      labels:
+        app: TMAmvc
+    spec:
+      containers:
+      - name: TMAmvc
+        image: nginx:latest
+        ports:
+        - containerPort: 8080
